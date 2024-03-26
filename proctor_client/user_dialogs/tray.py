@@ -49,6 +49,7 @@ class ProctorClientSystemTray(QSystemTrayIcon):
 
         self.setIcon(QIcon(ICON))
         self.setVisible(True)
+        self.setToolTip(WINDOW_TITLE)
         self.password_hash = password_hash
 
         self.menu = ProctorClientSystemTrayMenu()
