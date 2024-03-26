@@ -1,3 +1,4 @@
+import os
 import sys
 from typing import List
 from PyQt6.QtGui import QIcon
@@ -8,13 +9,17 @@ from utils.rest_api import ProctorRestAPI
 from admin_dialogs.admin import AdminMainWindow
 from user_dialogs.tray import ProctorClientSystemTray
 from utils.admin import isAdmin
-from constants import WINDOW_TITLE, ICON
+from constants import WINDOW_TITLE, ICON, APP_DIR, LOCAL_DB
 
 class MyApp(QApplication):
     def __init__(self, argv: List[str]) -> None:
         super().__init__(argv)
+
+        if not os.path.exists(APP_DIR):
+            os.mkdir(APP_DIR)
+
         self.con = QSqlDatabase.addDatabase("QSQLITE")
-        self.database_name = 'local.sqlite'
+        self.database_name = LOCAL_DB
         self.con.setDatabaseName(self.database_name)
         self.con.open()
 
