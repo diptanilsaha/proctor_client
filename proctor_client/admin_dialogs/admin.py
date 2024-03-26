@@ -10,12 +10,12 @@ from PyQt6.QtWidgets import (
     QMessageBox,
     QWidget
 )
-from utils.database import LocalDatabase
-from utils.rest_api import ProctorRestAPI
-from admin_dialogs.password import SetPasswordDialog
-from admin_dialogs.register import RegisterClientDialog
-from constants import WINDOW_TITLE, ICON
-import resources.makeqrc
+from proctor_client.utils.database import LocalDatabase
+from proctor_client.utils.rest_api import ProctorRestAPI
+from proctor_client.admin_dialogs.password import SetPasswordDialog
+from proctor_client.admin_dialogs.register import RegisterClientDialog
+from proctor_client.constants import WINDOW_TITLE, ICON
+import proctor_client.resources.makeqrc
 
 class AdminMainWindow(QMainWindow):
     def __init__(self, db: LocalDatabase, rapi: ProctorRestAPI):

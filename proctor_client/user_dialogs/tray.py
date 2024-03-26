@@ -4,12 +4,12 @@ from PyQt6.QtCore import QThreadPool
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtWidgets import QSystemTrayIcon, QMenu
 from usbmonitor import USBMonitor
-from .password import VerifyPasswordDialog
-from utils.database import LocalDatabase
-from utils.rest_api import ProctorRestAPI
-from constants import WINDOW_TITLE, ICON
-from utils.worker import Worker
-import resources.makeqrc
+from proctor_client.user_dialogs.password import VerifyPasswordDialog
+from proctor_client.utils.database import LocalDatabase
+from proctor_client.utils.rest_api import ProctorRestAPI
+from proctor_client.constants import WINDOW_TITLE, ICON
+from proctor_client.utils.worker import Worker
+import proctor_client.resources.makeqrc
 
 class ProctorClientSystemTrayMenu(QMenu):
     def __init__(self):

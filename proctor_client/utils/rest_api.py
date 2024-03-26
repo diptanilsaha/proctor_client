@@ -1,6 +1,6 @@
 import requests
-from utils.database import LocalDatabase
-from constants import USER_AGENT
+from proctor_client.utils.database import LocalDatabase
+from proctor_client.constants import USER_AGENT
 
 class ProctorRestAPI:
     def __init__(self, db: LocalDatabase):

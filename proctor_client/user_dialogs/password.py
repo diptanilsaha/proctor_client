@@ -8,9 +8,9 @@ from PyQt6.QtWidgets import (
     QMessageBox
 )
 from PyQt6.QtGui import QIcon
-from utils.password import check_password_hash
-from constants import WINDOW_TITLE, ICON
-import resources.makeqrc
+from proctor_client.utils.password import check_password_hash
+from proctor_client.constants import WINDOW_TITLE, ICON
+import proctor_client.resources.makeqrc
 
 class VerifyPasswordDialog(QDialog):
     def __init__(self, password_hash):

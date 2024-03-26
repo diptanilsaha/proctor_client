@@ -9,9 +9,9 @@ from PyQt6.QtWidgets import (
     QMessageBox
 )
 from PyQt6.QtGui import QIntValidator, QIcon
-from utils.rest_api import ProctorRestAPI
-from constants import WINDOW_TITLE, ICON
-import resources.makeqrc
+from proctor_client.utils.rest_api import ProctorRestAPI
+from proctor_client.constants import WINDOW_TITLE, ICON
+import proctor_client.resources.makeqrc
 
 class RegisterClientDialog(QDialog):
     def __init__(self, rapi: ProctorRestAPI):
