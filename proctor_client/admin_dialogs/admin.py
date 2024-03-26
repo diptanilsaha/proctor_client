@@ -64,17 +64,16 @@ class AdminMainWindow(QMainWindow):
         layout_widget.setLayout(main_window_layout)
         self.setCentralWidget(layout_widget)
 
-        self.setPasswordDialog = SetPasswordDialog(self.db)
-        self.registerClientDialog = RegisterClientDialog(self.rapi)
-
     def password_button_clicked(self):
-        if self.setPasswordDialog.exec():
+        setPasswordDialog = SetPasswordDialog(self.db)
+        if setPasswordDialog.exec():
             QMessageBox.information(self, "Success", "Proctor Client password set/changed successfully!")
 
     def register_button_clicked(self):
+        registerClientDialog = RegisterClientDialog(self.rapi)
         creds = self.db.get_credentials()
         if not creds:
-            if self.registerClientDialog.exec():
+            if registerClientDialog.exec():
                 QMessageBox.information(self, "Success", "Proctor Client registered successfully. Restart Proctor Client.")
                 sys.exit(0)
 
@@ -87,6 +86,6 @@ class AdminMainWindow(QMainWindow):
             button = dlg.exec()
 
             if button == QMessageBox.StandardButton.Yes:
-                if self.registerClientDialog.exec():
+                if registerClientDialog.exec():
                     QMessageBox.information(self, "Success", "Proctor Client registered successfully. Restart Proctor Client.")
                     sys.exit(0)
